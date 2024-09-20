@@ -7,6 +7,7 @@ import Pagination from "../components/Pagination";
 import StarRatingFilter from "../components/StarRatingFilter";
 import HotelTypesFilter from "../components/HotelTypesFilter";
 import FacilitiesFilter from "../components/FacilitiesFilter";
+import PriceFilter from "../components/PriceFilter";
 
 const Search=()=>{
     const search=useSearchContext();
@@ -15,9 +16,9 @@ const Search=()=>{
     const [SelectedHotelTypes,setSelectedHotelTypes]=useState<string[]>([])
     const [SelectedFacilities,setSelectedFacilities]=useState<string[]>([])
     const [SelectedPrice,setSelectedPrice]=useState<number | undefined>();
-    const [sortoption,setSortOption]=useState<string>("");
+    const [sortOption,setSortOption]=useState<string>("");
 
-      const searchParams={
+   const SearchParams={
         destination:search.destination,
         checkIn:search.checkIn.toISOString(),
         checkOut:search.checkOut.toISOString(),
@@ -28,12 +29,12 @@ const Search=()=>{
         types:SelectedHotelTypes,
         facilities:SelectedFacilities,
         maxPrice:SelectedPrice?.toString(),
-        sortoption,
+        sortOption,
       }
       
 
 
-    const {data:hotelData}=useQuery(["searchHotels",searchParams],()=>apiClient.searchHotels(searchParams));
+    const {data:hotelData}=useQuery(["searchHotels",SearchParams],()=>apiClient.searchHotels(SearchParams));
     console.log(search);
     const handleStarsChange=(event:React.ChangeEvent<HTMLInputElement>)=>{
      const starRating=event.target.value;
