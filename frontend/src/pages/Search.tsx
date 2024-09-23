@@ -28,7 +28,7 @@ const Search=()=>{
         stars:SelectedStars,
         types:SelectedHotelTypes,
         facilities:SelectedFacilities,
-        maxPrice:SelectedPrice?.toString(),
+        maxPrice:SelectedPrice?.toString()||"",
         sortOption,
       }
       

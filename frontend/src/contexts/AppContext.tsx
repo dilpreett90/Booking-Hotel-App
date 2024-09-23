@@ -2,7 +2,7 @@ import React, { useState,useContext } from "react";
 import Toast from "../components/Toast";
 import { useQuery } from "react-query";
 import * as apiClient from "../api-client";
-import {loadStripe,Stripe} from "@stripe/react-stripe-js";
+import {loadStripe,Stripe} from "@stripe/stripe-js";
 
 const STRIPE_PUB_KEY=import.meta.env.VITE_STRIPE_PUB_KEY || ""
 
@@ -32,7 +32,7 @@ export const AppContextProvider=({children}:{children:React.ReactNode})=>{
             showToast:(toastMessage)=>{
                 setToast(toastMessage);
             },
-            isLoggedIn:!isError
+            isLoggedIn:!isError,
             stripePromise
         }}>
             {toast && (<Toast 

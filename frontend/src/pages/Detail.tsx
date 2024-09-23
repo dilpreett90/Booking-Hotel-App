@@ -31,7 +31,7 @@ const Detail = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        {hotel.imageUrls.map((image) => (
+        {hotel.imageUrls.map((image:string) => (
           <div className="h-[300px]">
             <img
               src={image}
@@ -43,7 +43,7 @@ const Detail = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-2">
-        {hotel.facilities.map((facility) => (
+        {hotel.facilities.map((facility:any) => (
           <div className="border border-slate-300 rounded-sm p-3">
             {facility}
           </div>
