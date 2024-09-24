@@ -7,7 +7,7 @@ import verifyToken from "../middleware/auth";
 
 const stripe = new Stripe(process.env.STRIPE_API_KEY as string);
 
-const router = express.Router();
+const   router = express.Router();
 
 router.get("/search", async (req: Request, res: Response) => {
   try {
