@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin:"*",
+    origin:"https://bookingshooking.store",
     credentials:true,
 }))
 
